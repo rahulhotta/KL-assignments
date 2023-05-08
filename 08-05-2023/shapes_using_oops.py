@@ -2,62 +2,57 @@
 A python code for calculating area and perimeter for a few shapes
 """
 
-# """
-# A class to contain the methods of Rectangle
-# """
-
 
 class Rectangle:
+    """
+    A class to contain the methods of Rectangle
+    """
 
     def __init__(self, rectangle_length, rectangle_breadth):
         self.length = rectangle_length
         self.breadth = rectangle_breadth
 
-    # """Function for calculating the area of Rectangle"""
-
     def calculate_area(self):
+        """Function for calculating the area of Rectangle"""
+
         area = self.length * self.breadth
         print(f"The area of rectangle is {area}.")
 
-    # """Function for calculating the perimeter of Rectangle"""
-
     def calculate_perimeter(self):
+        """Function for calculating the perimeter of Rectangle"""
+
         perimeter = 2 * (self.length + self.breadth)
         print(f"The perimeter of rectangle is {perimeter}.")
 
 
-# """
-# A class to contain the methods of Square
-# """
-
-
 class Square:
+    """
+    A class to contain the methods of Square
+    """
+
     def __init__(self, length):
         self.length = length
 
-    # """
-    # Function for calculating the area of Square
-    # """
-
     def calculate_area(self):
+        """
+        Function for calculating the area of Square
+        """
         area = self.length * self.length
         print(f"The area of square is {area}.")
 
-    # """
-    # Function for calculating the perimeter of Square
-    # """
-
     def calculate_perimeter(self):
+        """
+        Function for calculating the perimeter of Square
+        """
         perimeter = 4 * (self.length)
         print(f"The perimeter of square is {perimeter}.")
 
 
-# """
-# A class to contain the methods of Triangle
-# """
-
-
 class Triangle:
+    """
+    A class to contain the methods of Triangle
+    """
+
     def __init__(self, triangle_height, triangle_breadth, triangle_side1, triangle_side2, triangle_side3):
         self.height = triangle_height
         self.breadth = triangle_breadth
@@ -65,45 +60,40 @@ class Triangle:
         self.side2 = triangle_side2
         self.side3 = triangle_side3
 
-    # """
-    # Calculating the area of Triangle
-    # """
-
     def calculate_area(self):
+        """
+        Calculating the area of Triangle
+        """
         area = 0.5 * self.breadth * self.height
         print(f"The area of triangle is {area}.")
 
-    # """
-    # Calculating the perimeter of Triangle
-    # """
-
     def calculate_perimeter(self):
+        """
+        Calculating the perimeter of Triangle
+        """
         perimeter = self.side1 + self.side2 + self.side3
         print(f"The perimeter of triangle is {perimeter}.")
 
 
-# """
-# A class to contain the methods of Cirlce
-# """
-
-
 class Cirlcle:
+    """
+    A class to contain the methods of Cirlce
+    """
+
     def __init__(self, cicle_radius):
         self.radius = cicle_radius
 
-    # """
-    # Function for calculating the area of Circle
-    # """
-
     def calculate_area(self):
+        """
+        Function for calculating the area of Circle
+        """
         area = 3.14 * self.radius * self.radius
         print(f"The area of circle is {area}.")
 
-    # """
-    # calculating the perimeter of Circle
-    # """
-
     def calculate_perimeter(self):
+        """
+        calculating the perimeter of Circle
+        """
         perimeter = 2 * 3.14 * self.radius
         print(f"The perimeter of circle is {perimeter}.")
 
