@@ -16,13 +16,13 @@ class Rectangle:
         """Function for calculating the area of Rectangle"""
 
         area = self.length * self.breadth
-        print(f"The area of rectangle is {area}.")
+        print(f"The area of rectangle is {area}")
 
     def calculate_perimeter(self):
         """Function for calculating the perimeter of Rectangle"""
 
         perimeter = 2 * (self.length + self.breadth)
-        print(f"The perimeter of rectangle is {perimeter}.")
+        print(f"The perimeter of rectangle is {perimeter}")
 
 
 class Square:
@@ -30,22 +30,22 @@ class Square:
     A class to contain the methods of Square
     """
 
-    def __init__(self, length):
-        self.length = length
+    def __init__(self, square_length):
+        self.length = square_length
 
     def calculate_area(self):
         """
         Function for calculating the area of Square
         """
         area = self.length * self.length
-        print(f"The area of square is {area}.")
+        print(f"The area of square is {area}")
 
     def calculate_perimeter(self):
         """
         Function for calculating the perimeter of Square
         """
         perimeter = 4 * (self.length)
-        print(f"The perimeter of square is {perimeter}.")
+        print(f"The perimeter of square is {perimeter}")
 
 
 class Triangle:
@@ -65,14 +65,14 @@ class Triangle:
         Calculating the area of Triangle
         """
         area = 0.5 * self.breadth * self.height
-        print(f"The area of triangle is {area}.")
+        print(f"The area of triangle is {area}")
 
     def calculate_perimeter(self):
         """
         Calculating the perimeter of Triangle
         """
         perimeter = self.side1 + self.side2 + self.side3
-        print(f"The perimeter of triangle is {perimeter}.")
+        print(f"The perimeter of triangle is {perimeter}")
 
 
 class Cirlcle:
@@ -88,14 +88,14 @@ class Cirlcle:
         Function for calculating the area of Circle
         """
         area = 3.14 * self.radius * self.radius
-        print(f"The area of circle is {area}.")
+        print(f"The area of circle is {area}")
 
     def calculate_perimeter(self):
         """
         calculating the perimeter of Circle
         """
         perimeter = 2 * 3.14 * self.radius
-        print(f"The perimeter of circle is {perimeter}.")
+        print(f"The perimeter of circle is {perimeter}")
 
 
 while True:
