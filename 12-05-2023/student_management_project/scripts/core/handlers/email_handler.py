@@ -3,8 +3,8 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from scripts.utility.email_utility import SENDER_EMAIL, SENDER_PASSWORD
 from scripts.constants.app_constants import Email
-from scripts.logging.logger import logger
-import logging
+# from scripts.logging.logger import logger
+# import logging
 
 class Email_handler:
     def send_email(Email: Email):
@@ -39,8 +39,8 @@ class Email_handler:
             return {"message": "Email sent successfully"}
         
         except Exception as e:
-            logger.info({"status": "failed","error":str(e.args)})
-            logging.error({"status": "failed","error":str(e.args)})
+            # logger.info({"status": "failed","error":str(e.args)})
+            # logging.error({"status": "failed","error":str(e.args)})
             return {"status": "failed","error":str(e.args)}
 
         
