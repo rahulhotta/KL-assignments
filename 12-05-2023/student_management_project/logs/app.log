@@ -1,8 +1,21 @@
-2023-05-12 21:35:02 - INFO   - [MainThread:_log_changes():281] - 5 changes detected
-2023-05-12 22:26:41 - INFO   - [AnyIO worker thread:view_all_student():36] - {'status': 'failed', 'error': '("192.168.0.220:2717: timed out, Timeout: 30s, Topology Description: <TopologyDescription id: 645e6ef35e2c817d30000d4a, topology_type: Unknown, servers: [<ServerDescription (\'192.168.0.220\', 2717) server_type: Unknown, rtt: None, error=NetworkTimeout(\'192.168.0.220:2717: timed out\')>]>",)'}
-2023-05-14 10:25:09 - INFO   - [MainThread:<module>():10] - {'status': 'failed', 'error': '("Invalid URI scheme: URI must begin with \'mongodb://\' or \'mongodb+srv://\'",)'}
-2023-05-14 10:26:21 - INFO   - [MainThread:<module>():10] - {'status': 'failed', 'error': '("Invalid URI scheme: URI must begin with \'mongodb://\' or \'mongodb+srv://\'",)'}
-2023-05-14 10:27:28 - ERROR  - [MainThread:<module>():11] - {'status': 'failed', 'error': '("Invalid URI scheme: URI must begin with \'mongodb://\' or \'mongodb+srv://\'",)'}
-2023-05-14 10:27:35 - ERROR  - [MainThread:<module>():11] - {'status': 'failed', 'error': '("Invalid URI scheme: URI must begin with \'mongodb://\' or \'mongodb+srv://\'",)'}
-2023-05-14 10:28:47 - INFO   - [MainThread:<module>():17] - {'status': 'failed', 'error': '("name \'student_client\' is not defined",)'}
-2023-05-14 10:30:09 - INFO   - [MainThread:<module>():17] - {'status': 'failed', 'error': '("name \'student_client\' is not defined",)'}
+ERROR   : 	 student_info_handler.py update_student 40 - {'status': 'failed', 'error': '("name \'student_d\' is not defined",)'}
+2023-05-15 13:59:15 - ERROR  - [AnyIO worker thread:update_student():40] - {'status': 'failed', 'error': '("name \'student_d\' is not defined",)'}
+ERROR   : 	 student_info_services.py update_a_student 55 - {'status': 'failed', 'error': '("\'NoneType\' object has no attribute \'level\'",)'}
+2023-05-15 13:59:15 - ERROR  - [AnyIO worker thread:update_a_student():55] - {'status': 'failed', 'error': '("\'NoneType\' object has no attribute \'level\'",)'}
+INFO    : 	 student_info_handler.py view_all_student 16 - {'status': 'failed', 'error': '("\'Student_database\' object has no attribute \'view_all_dat\'",)'}
+2023-05-15 14:02:52 - INFO   - [AnyIO worker thread:view_all_student():16] - {'status': 'failed', 'error': '("\'Student_database\' object has no attribute \'view_all_dat\'",)'}
+ERROR   : 	 student_info_services.py view_students 29 - {'status': 'failed', 'error': '("\'NoneType\' object has no attribute \'level\'",)'}
+2023-05-15 14:02:52 - ERROR  - [AnyIO worker thread:view_students():29] - {'status': 'failed', 'error': '("\'NoneType\' object has no attribute \'level\'",)'}
+ERROR   : 	 student_info_services.py send_an_email 20 - {'status': 'failed', 'error': "('Email_handler.send_email() takes 2 positional arguments but 3 were given',)"}
+ERROR   : 	 email_handler.py send_email 44 - {'status': 'failed', 'error': '("\'dict\' object has no attribute \'encode\'",)'}
+ERROR   : 	 email_handler.py send_email 44 - {'status': 'failed', 'error': '("\'dict\' object has no attribute \'encode\'",)'}
+ERROR   : 	 email_handler.py send_email 43 - {'status': 'failed', 'error': '("\'dict\' object has no attribute \'encode\'",)'}
+ERROR   : 	 email_handler.py send_email 45 - {'status': 'failed', 'error': '("\'dict\' object has no attribute \'encode\'",)'}
+ERROR   : 	 email_handler.py send_email 45 - {'status': 'failed', 'error': '("\'dict\' object has no attribute \'encode\'",)'}
+ERROR   : 	 email_handler.py send_email 45 - {'status': 'failed', 'error': '("\'dict\' object has no attribute \'encode\'",)'}
+ERROR   : 	 student_info_services.py send_an_email 21 - {'status': 'failed', 'error': '("Email_handler.send_email() missing 1 required positional argument: \'Email\'",)'}
+ERROR   : 	 student_info_services.py send_an_email 21 - {'status': 'failed', 'error': '("\'dict\' object has no attribute \'encode\'",)'}
+ERROR   : 	 student_info_services.py send_an_email 21 - {'status': 'failed', 'error': '("\'dict\' object has no attribute \'encode\'",)'}
+ERROR   : 	 student_info_services.py send_an_email 20 - {'status': 'failed', 'error': '("\'dict\' object has no attribute \'encode\'",)'}
+ERROR   : 	 student_info_handler.py calculate_avg_age 67 - {'status': 'failed', 'error': '("\'CommandCursor\' object is not subscriptable",)'}
+ERROR   : 	 student_info_handler.py calculate_avg_age 67 - {'status': 'failed', 'error': '("\'CommandCursor\' object is not subscriptable",)'}

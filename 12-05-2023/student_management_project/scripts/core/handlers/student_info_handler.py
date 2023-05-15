@@ -1,8 +1,9 @@
 from scripts.core.db.mongo_db import student_database_object
 from scripts.constants.app_constants import Student
-# from scripts.logging.logger import logger
 import logging
+from scripts.logging.log_config import getLogger
 
+getLogger()
 class Student_handler:
     def view_all_student(self):
         try :
@@ -11,7 +12,6 @@ class Student_handler:
                 return {"status": "Success","Message":"No students found"}
             return all_students 
         except Exception as e:
-            # logger.info({"status": "failed","error":str(e.args)})
             logging.error({"status": "failed","error":str(e.args)})
             return {"status": "failed","error":str(e.args)}
 
@@ -23,7 +23,6 @@ class Student_handler:
             student_database_object.add_data_to_db( student)
             return {"status":"Success","Message":"Student added successfully"}
         except Exception as e:
-            # logger.info({"status": "failed","error":str(e.args)})
             logging.error({"status": "failed","error":str(e.args)})
             return {"status": "failed","error":str(e.args)}
         
@@ -34,7 +33,6 @@ class Student_handler:
             student_database_object.update_data_in_db(student_id, student)
             return {"status":"Success","Message":"Student data updated successfully"}
         except Exception as e:
-            # logger.info({"status": "failed","error":str(e.args)})
             logging.error({"status": "failed","error":str(e.args)})
             return {"status": "failed","error":str(e.args)}
 
@@ -46,8 +44,30 @@ class Student_handler:
             student_database_object.delete_data_from_db(student_id)
             return {"status":"Success","Message":"Student deleted successfully"}
         except Exception as e:
-            # logger.info({"status": "failed","error":str(e.args)})
             logging.error({"status": "failed","error":str(e.args)})
             return {"status": "failed","error":str(e.args)}
+    def calculate_avg_age(self):
+        try:
+            avg_age = student_database_object.inventory.aggregate([
+                {
+                    '$group': {
+                        '_id': None, 
+                        'avgAge': {
+                            '$avg': '$age'
+                        }
+                    }
+                }, {
+                    '$project': {
+                        '_id': 0
+                    }
+                }
+            ])
+            avgList = list(avg_age)
+            return avgList[0]["avgAge"]
+        except Exception as e:
+            logging.error({"status": "failed","error":str(e.args)})
+            return {"status": "failed","error":str(e.args)}
+
+        
 
 

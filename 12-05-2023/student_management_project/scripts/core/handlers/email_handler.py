@@ -3,11 +3,13 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from scripts.utility.email_utility import SENDER_EMAIL, SENDER_PASSWORD
 from scripts.constants.app_constants import Email
-# from scripts.logging.logger import logger
-# import logging
 
+import logging
+from scripts.logging.log_config import getLogger
+
+getLogger()
 class Email_handler:
-    def send_email(Email: Email):
+    def send_email(self,body, Email: Email):
         # Set up the email details
         sender_email = SENDER_EMAIL
         sender_password = SENDER_PASSWORD
@@ -20,7 +22,7 @@ class Email_handler:
         message["Subject"] = Email.subject
         
     # Add the body to the email
-        message.attach(MIMEText(Email.body, "plain"))
+        message.attach(MIMEText(str(body), "plain"))
 
         try:
             # Create a secure connection to the SMTP server
@@ -40,7 +42,7 @@ class Email_handler:
         
         except Exception as e:
             # logger.info({"status": "failed","error":str(e.args)})
-            # logging.error({"status": "failed","error":str(e.args)})
+            logging.error({"status": "failed","error":str(e.args)})
             return {"status": "failed","error":str(e.args)}
 
         
