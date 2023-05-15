@@ -42,8 +42,8 @@ def add_student(student_id: int, student: Student):
         response = student_object.add_new_student(student_id, student)
         return response
     except Exception as e:
-            logging.error({"status": "failed","error":str(e.args)})
-            return {"status": "failed","error":str(e.args)}
+        logging.error({"status": "failed","error":str(e.args)})
+        return {"status": "failed","error":str(e.args)}
 
 
 @student_router.put("/update-student/{student_id}")
@@ -53,8 +53,10 @@ def update_a_student(student_id: int, student: Student):
         response = student_object.update_student(student_id, student)
         return response
     except Exception as e:
-            logging.error({"status": "failed","error":str(e.args)})
-            return {"status": "failed","error":str(e.args)}
+        logging.error({"status": "failed","error":str(e.args)})
+        return {"status": "failed","error":str(e.args)}
+
+
 @student_router.delete("/delete-student/{student_id}")
 def delete_a_student(student_id : int):
     try:
