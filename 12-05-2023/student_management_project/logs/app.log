@@ -1,21 +1,25 @@
-ERROR   : 	 student_info_handler.py update_student 40 - {'status': 'failed', 'error': '("name \'student_d\' is not defined",)'}
-2023-05-15 13:59:15 - ERROR  - [AnyIO worker thread:update_student():40] - {'status': 'failed', 'error': '("name \'student_d\' is not defined",)'}
-ERROR   : 	 student_info_services.py update_a_student 55 - {'status': 'failed', 'error': '("\'NoneType\' object has no attribute \'level\'",)'}
-2023-05-15 13:59:15 - ERROR  - [AnyIO worker thread:update_a_student():55] - {'status': 'failed', 'error': '("\'NoneType\' object has no attribute \'level\'",)'}
-INFO    : 	 student_info_handler.py view_all_student 16 - {'status': 'failed', 'error': '("\'Student_database\' object has no attribute \'view_all_dat\'",)'}
-2023-05-15 14:02:52 - INFO   - [AnyIO worker thread:view_all_student():16] - {'status': 'failed', 'error': '("\'Student_database\' object has no attribute \'view_all_dat\'",)'}
-ERROR   : 	 student_info_services.py view_students 29 - {'status': 'failed', 'error': '("\'NoneType\' object has no attribute \'level\'",)'}
-2023-05-15 14:02:52 - ERROR  - [AnyIO worker thread:view_students():29] - {'status': 'failed', 'error': '("\'NoneType\' object has no attribute \'level\'",)'}
-ERROR   : 	 student_info_services.py send_an_email 20 - {'status': 'failed', 'error': "('Email_handler.send_email() takes 2 positional arguments but 3 were given',)"}
-ERROR   : 	 email_handler.py send_email 44 - {'status': 'failed', 'error': '("\'dict\' object has no attribute \'encode\'",)'}
-ERROR   : 	 email_handler.py send_email 44 - {'status': 'failed', 'error': '("\'dict\' object has no attribute \'encode\'",)'}
-ERROR   : 	 email_handler.py send_email 43 - {'status': 'failed', 'error': '("\'dict\' object has no attribute \'encode\'",)'}
-ERROR   : 	 email_handler.py send_email 45 - {'status': 'failed', 'error': '("\'dict\' object has no attribute \'encode\'",)'}
-ERROR   : 	 email_handler.py send_email 45 - {'status': 'failed', 'error': '("\'dict\' object has no attribute \'encode\'",)'}
-ERROR   : 	 email_handler.py send_email 45 - {'status': 'failed', 'error': '("\'dict\' object has no attribute \'encode\'",)'}
-ERROR   : 	 student_info_services.py send_an_email 21 - {'status': 'failed', 'error': '("Email_handler.send_email() missing 1 required positional argument: \'Email\'",)'}
-ERROR   : 	 student_info_services.py send_an_email 21 - {'status': 'failed', 'error': '("\'dict\' object has no attribute \'encode\'",)'}
-ERROR   : 	 student_info_services.py send_an_email 21 - {'status': 'failed', 'error': '("\'dict\' object has no attribute \'encode\'",)'}
-ERROR   : 	 student_info_services.py send_an_email 20 - {'status': 'failed', 'error': '("\'dict\' object has no attribute \'encode\'",)'}
-ERROR   : 	 student_info_handler.py calculate_avg_age 67 - {'status': 'failed', 'error': '("\'CommandCursor\' object is not subscriptable",)'}
-ERROR   : 	 student_info_handler.py calculate_avg_age 67 - {'status': 'failed', 'error': '("\'CommandCursor\' object is not subscriptable",)'}
+2023-05-15 22:26:38 - ERROR  - [AnyIO worker thread:view_all_data():32] - {'status': 'failed', 'error': "('_i',)"}
+2023-05-15 22:26:38 - ERROR  - [AnyIO worker thread:view_all_student():14] - {'status': 'failed', 'error': '("\'NoneType\' object has no attribute \'level\'",)'}
+2023-05-15 22:26:38 - ERROR  - [AnyIO worker thread:view_students():32] - {'status': 'failed', 'error': '("\'NoneType\' object has no attribute \'level\'",)'}
+2023-05-15 22:39:18 - ERROR  - [AnyIO worker thread:send_email():43] - {'status': 'failed', 'error': "(10060, 'A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond', None, 10060, None)"}
+2023-05-15 22:39:18 - ERROR  - [AnyIO worker thread:send_an_email():21] - {'status': 'failed', 'error': '("\'NoneType\' object has no attribute \'level\'",)'}
+2023-05-15 22:42:00 - ERROR  - [AnyIO worker thread:root:send_email():43] - {'status': 'failed', 'error': "(10060, 'A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond', None, 10060, None)"}
+2023-05-15 22:42:00 - ERROR  - [AnyIO worker thread:root:send_an_email():21] - {'status': 'failed', 'error': '("\'NoneType\' object has no attribute \'level\'",)'}
+2023-05-15 22:46:12 - ERROR  - [AnyIO worker thread: root ERROR :send_email():43] - {'status': 'failed', 'error': "(10060, 'A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond', None, 10060, None)"}
+2023-05-15 22:46:12 - ERROR  - [AnyIO worker thread: root ERROR :send_an_email():21] - {'status': 'failed', 'error': '("\'NoneType\' object has no attribute \'level\'",)'}
+2023-05-15 22:49:25 - ERROR  - [AnyIO worker thread: email_handler.py  :send_email():43] - {'status': 'failed', 'error': "(10060, 'A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond', None, 10060, None)"}
+2023-05-15 22:49:25 - ERROR  - [AnyIO worker thread: student_info_services.py  :send_an_email():21] - {'status': 'failed', 'error': '("\'NoneType\' object has no attribute \'level\'",)'}
+2023-05-15 22:51:32 - ERROR  - [AnyIO worker thread: email_handler.py  :send_email():43] - {'status': 'failed', 'error': "(10060, 'A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond', None, 10060, None)"}
+2023-05-15 22:51:32 - ERROR  - [AnyIO worker thread: student_info_services.py  :send_an_email():21] - {'status': 'failed', 'error': '("\'NoneType\' object has no attribute \'level\'",)'}
+2023-05-15 22:52:27 - ERROR  - [AnyIO worker thread: student_info_services.py  :send_an_email():21] - {'status': 'failed', 'error': "('Email_handler.send_email() takes 2 positional arguments but 3 were given',)"}
+2023-05-15 22:53:12 - ERROR  - [AnyIO worker thread: email_handler.py  :send_email():43] - {'status': 'failed', 'error': "(10060, 'A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond', None, 10060, None)"}
+2023-05-15 22:53:12 - ERROR  - [AnyIO worker thread: student_info_services.py  :send_an_email():21] - {'status': 'failed', 'error': '("\'NoneType\' object has no attribute \'level\'",)'}
+2023-05-15 22:55:16 - ERROR  - [AnyIO worker thread: email_handler.py  :send_email():43] - {'status': 'failed', 'error': "(10060, 'A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond', None, 10060, None)"}
+2023-05-15 22:55:16 - ERROR  - [AnyIO worker thread: student_info_services.py  :send_an_email():21] - {'status': 'failed', 'error': '("\'NoneType\' object has no attribute \'level\'",)'}
+2023-05-15 22:56:15 - ERROR  - [AnyIO worker thread: student_info_services.py  :send_an_email():21] - {'status': 'failed', 'error': '("\'MIMEMultipart\' object has no attribute \'encode\'",)'}
+2023-05-15 22:57:09 - ERROR  - [AnyIO worker thread: email_handler.py  :send_email():43] - {'status': 'failed', 'error': "(10060, 'A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond', None, 10060, None)"}
+2023-05-15 22:57:09 - ERROR  - [AnyIO worker thread: student_info_services.py  :send_an_email():21] - {'status': 'failed', 'error': '("\'NoneType\' object has no attribute \'level\'",)'}
+2023-05-15 23:01:12 - ERROR  - [AnyIO worker thread: email_handler.py  :send_email():43] - {'status': 'failed', 'error': "(10060, 'A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond', None, 10060, None)"}
+2023-05-15 23:01:12 - ERROR  - [AnyIO worker thread: student_info_services.py  :send_an_email():21] - {'status': 'failed', 'error': '("\'NoneType\' object has no attribute \'level\'",)'}
+2023-05-15 23:02:31 - ERROR  - [AnyIO worker thread: email_handler.py  :send_email():43] - {'status': 'failed', 'error': "(10060, 'A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond', None, 10060, None)"}
+2023-05-15 23:02:31 - ERROR  - [AnyIO worker thread: student_info_services.py  :send_an_email():21] - {'status': 'failed', 'error': '("\'NoneType\' object has no attribute \'level\'",)'}

@@ -1,8 +1,7 @@
 from pymongo import MongoClient
 from scripts.utility.mongo_utility import MONGO_URI, MONGO_DB_NAME, MONGO_COLLECTION_NAME
-# import logging
 from scripts.logging.log_config import getLogger
-
+from scripts.constants.app_constants import average_age_aggregation
 logger = getLogger()
 
 
@@ -17,55 +16,55 @@ class Mongo_database:
         except Exception as e:
             logger.error({"status": "failed", "error": str(e.args)})
         try:
-            self.inventory = self.db[MONGO_COLLECTION_NAME]
+            self.collection = self.db[MONGO_COLLECTION_NAME]
         except Exception as e:
             logger.error({"status": "failed", "error": str(e.args)})
 
     def view_all_data(self):
         try:
-            inventory_data = self.inventory.find()
-            data_list = []
-            for student in inventory_data:
-                del student["_id"]
-                data_list.append(student)
-            return data_list
+            collection_data = list(self.collection.find({}, {'_id': False}))
+            return collection_data
         except Exception as e:
             logger.error({"status": "failed", "error": str(e.args)})
             return {"status": "failed", "error": str(e.args)}
 
     def find_by_id(self, id):
         try:
-            found_data = self.inventory.find(id)
-            data_list = []
-            for student in found_data:
-                del student["_id"]
-                data_list.append(student)
-            return data_list
+            found_data = list(self.collection.find(id,{"_id":False}))
+            return found_data
         except Exception as e:
             logger.error({"status": "failed", "error": str(e.args)})
             return {"status": "failed", "error": str(e.args)}
 
     def add_data_to_db(self, data):
         try:
-            self.inventory.insert_one(data.dict())
+            self.collection.insert_one(data.dict())
+            return {"status": "success", "Message": "Data added successfully!"}
         except Exception as e:
             logger.error({"status": "failed", "error": str(e.args)})
             return {"status": "failed", "error": str(e.args)}
 
     def update_data_in_db(self, obj_id: int, data):
         try:
-            self.inventory.update_one(
+            self.collection.update_one(
                 {"id": obj_id}, {"$set": data.dict()})
+            return {"status": "success", "Message": "Data updated successfully!"}
         except Exception as e:
             logger.error({"status": "failed", "error": str(e.args)})
             return {"status": "failed", "error": str(e.args)}
 
     def delete_data_from_db(self, obj_id: int):
         try:
-            self.inventory.delete_one({"id": obj_id})
+            self.collection.delete_one({"id": obj_id})
+            return {"status": "success", "Message": "Deleted successfully!"}
         except Exception as e:
             logger.error({"status": "failed", "error": str(e.args)})
             return {"status": "failed", "error": str(e.args)}
-
+    def mongo_aggregation(self):
+        try:
+            return self.collection.aggregate(average_age_aggregation)
+        except Exception as e:
+            logger.error({"status": "failed", "error": str(e.args)})
+            return {"status": "failed", "error": str(e.args)}
 
 student_database_object = Mongo_database()

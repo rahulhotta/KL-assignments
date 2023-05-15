@@ -3,11 +3,9 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from scripts.utility.email_utility import SENDER_EMAIL, SENDER_PASSWORD
 from scripts.constants.app_constants import Email
-
-import logging
 from scripts.logging.log_config import getLogger
 
-getLogger()
+logger = getLogger()
 class Email_handler:
     def send_email(self,body, Email: Email):
         # Set up the email details
@@ -42,7 +40,7 @@ class Email_handler:
         
         except Exception as e:
             # logger.info({"status": "failed","error":str(e.args)})
-            logging.error({"status": "failed","error":str(e.args)})
+            logger.error({"status": "failed","error":str(e.args)})
             return {"status": "failed","error":str(e.args)}
 
         
