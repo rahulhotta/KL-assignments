@@ -3,7 +3,8 @@ from scripts.core.handlers.student_info_handler import Student_handler
 from scripts.constants.app_constants import Student
 from scripts.core.handlers.email_handler import email_object, Email
 from scripts.logging.log_config import getLogger
-
+import json
+import pandas as pd
 logger = getLogger()
 student_router = APIRouter()
 
@@ -13,9 +14,12 @@ def send_an_email(email: Email):
     try:
         student_object = Student_handler()
         avg_age = student_object.calculate_avg_age()
-        message = f"Average age of all the students is {avg_age}"
+        all_students_list_json = student_object.view_all_student()
+        all_students_str = str(json.dumps(all_students_list_json, default=str, indent=2))
+        pd_object = pd.read_json(all_students_str )
+        table = pd.DataFrame(pd_object)
+        message = f"{table}"
         email_object.send_email(message, email)
-        # email_object.send_email(email)
         return {"Message": "email sent!!"}
     except Exception as e:
         logger.error({"status": "failed", "error": str(e.args)})

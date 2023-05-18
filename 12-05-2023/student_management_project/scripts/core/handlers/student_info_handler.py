@@ -1,7 +1,7 @@
 from scripts.core.db.mongo_db import student_database_object
 from scripts.constants.app_constants import Student
 from scripts.logging.log_config import getLogger
-
+import json
 logger = getLogger()
 class Student_handler:
     def view_all_student(self):
@@ -50,6 +50,7 @@ class Student_handler:
         except Exception as e:
             logger.error({"status": "failed","error":str(e.args)})
             return {"status": "failed","error":str(e.args)}
+    
 
         
 

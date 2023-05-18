@@ -8,7 +8,7 @@ def getLogger():
     formatter = logging.Formatter(log_formatter, time_format)
     log_file = "logs/app.log"
     temp_handler = RotatingFileHandler(
-        log_file, maxBytes=1000000, backupCount=5
+        log_file, maxBytes=1000000
     )
     temp_handler.setFormatter(formatter)
     __logger__.addHandler(temp_handler)
