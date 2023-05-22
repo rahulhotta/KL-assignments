@@ -20,7 +20,7 @@ class Email_handler:
         message["Subject"] = Email.subject
         
     # Add the body to the email
-        message.attach(MIMEText(str(body), "plain"))
+        message.attach(MIMEText(body, "html"))
 
         try:
             # Create a secure connection to the SMTP server
