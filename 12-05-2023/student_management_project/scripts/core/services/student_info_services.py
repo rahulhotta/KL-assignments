@@ -3,8 +3,6 @@ from scripts.core.handlers.student_info_handler import Student_handler
 from scripts.constants.app_constants import Student
 from scripts.core.handlers.email_handler import email_object, Email
 from scripts.logging.log_config import getLogger
-import json
-import pandas as pd
 from json2html import *
 
 logger = getLogger()
@@ -16,10 +14,15 @@ def send_an_email(email: Email):
     try:
         student_object = Student_handler()
         all_students_list_json = student_object.view_all_student()
-        # all_students_str = str(json.dumps(all_students_list_json, default=str, indent=2))
-        # pd_object = pd.read_json(all_students_str )
-        # table = pd.DataFrame(pd_object)
-        table = json2html.convert(json = all_students_list_json)        
+
+        table = json2html.convert(json = all_students_list_json) 
+        # table = table.replace("<th>", '<th style="color: white; background-color: blue; padding: 2rem">')       
+        styles = {
+        "th": 'color: white; background-color: #333; padding:1rem;',
+        "td": 'text-align: center; padding:1rem;'
+            }
+        for tag, style in styles.items():
+            table = table.replace("<{}>".format(tag), '<{} style="{}">'.format(tag, style))
         email_object.send_email(table, email)
         return {"Message": "email sent!!"}
     except Exception as e:

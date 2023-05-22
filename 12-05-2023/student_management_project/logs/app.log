@@ -10,3 +10,6 @@
 2023-05-18 10:19:24 - ERROR  - [AnyIO worker thread: student_info_services.py  :send_an_email():29] - {'status': 'failed', 'error': '("\'module\' object is not callable",)'}
 2023-05-22 15:40:10 - ERROR  - [AnyIO worker thread: email_handler.py  :send_email():43] - {'status': 'failed', 'error': '("\'str\' object has no attribute \'policy\'",)'}
 2023-05-22 15:40:10 - ERROR  - [AnyIO worker thread: student_info_services.py  :send_an_email():26] - {'status': 'failed', 'error': '("\'NoneType\' object has no attribute \'level\'",)'}
+2023-05-22 16:06:59 - ERROR  - [AnyIO worker thread: student_info_services.py  :send_an_email():28] - {'status': 'failed', 'error': '("\'Json2Html\' object has no attribute \'Table\'",)'}
+2023-05-22 16:08:59 - ERROR  - [AnyIO worker thread: student_info_services.py  :send_an_email():26] - {'status': 'failed', 'error': '("Json2Html.convert() got an unexpected keyword argument \'thead_attributes\'",)'}
+2023-05-22 16:11:29 - ERROR  - [AnyIO worker thread: student_info_services.py  :send_an_email():27] - {'status': 'failed', 'error': '("Json2Html.convert() got an unexpected keyword argument \'thead_attributes\'",)'}
